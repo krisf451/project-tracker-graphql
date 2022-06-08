@@ -1,5 +1,9 @@
 import React from "react";
-import { Header, Clients, AddClientModal } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { Header } from "./components";
+import Home from "./pages/Home";
+import ProjectDetails from "./pages/ProjectDetails";
+import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
 
 const App = () => {
@@ -8,8 +12,11 @@ const App = () => {
       <Toaster />
       <Header />
       <div className="container">
-        <AddClientModal />
-        <Clients />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+        </Routes>
       </div>
     </>
   );
