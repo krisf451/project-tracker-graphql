@@ -2,7 +2,6 @@ import React from "react";
 import { FaIdBadge, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const ClientInfo = ({ client }) => {
-  console.log(client);
   return (
     <>
       <h5 className="mt-5">Client Information</h5>

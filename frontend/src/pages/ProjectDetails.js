@@ -9,7 +9,6 @@ const ProjectDetails = () => {
   const { errors, loading, data } = useQuery(GET_PROJECT, {
     variables: { id },
   });
-  console.log(data.project.client);
   if (loading) return <Loader />;
   if (errors) return "Something went wrong...";
   return (
