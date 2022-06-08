@@ -3,6 +3,7 @@ import { DELETE_CLIENT } from "../mutations/clientMutations";
 import { GET_CLIENTS } from "../queries/clientQueries";
 import { useMutation } from "@apollo/client";
 import { FaTrash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const ClientRow = ({ client }) => {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
@@ -25,7 +26,13 @@ const ClientRow = ({ client }) => {
       <td>{client.email}</td>
       <td>{client.phone}</td>
       <td>
-        <button className="btn btn-danger btn-sm" onClick={deleteClient}>
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={() => {
+            deleteClient();
+            toast.success("successfully deleted client");
+          }}
+        >
           <FaTrash />
         </button>
       </td>

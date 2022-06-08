@@ -1,13 +1,17 @@
 import React from "react";
-import { Header, Clients } from "./components";
-import { Routes, Route } from "react-router-dom";
+import { Header, Clients, AddClientModal } from "./components";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <div className="container">
+    <>
+      <Toaster />
       <Header />
-      <Clients />
-    </div>
+      <div className="container">
+        <AddClientModal />
+        <Clients />
+      </div>
+    </>
   );
 };
 

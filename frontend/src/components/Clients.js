@@ -5,7 +5,6 @@ import { GET_CLIENTS } from "../queries/clientQueries";
 
 const Clients = () => {
   const { loading, errors, data } = useQuery(GET_CLIENTS);
-  console.log(data);
   if (loading) return <Loader />;
   if (errors) return "Something went wrong...";
   return (
