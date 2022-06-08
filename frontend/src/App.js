@@ -1,11 +1,14 @@
 import React from "react";
+import { Header, Clients } from "./components";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div className="container">
-      <h1>Test Tailwind</h1>
+      <Header />
+      <Clients />
     </div>
   );
-}
+};
 
 export default App;
