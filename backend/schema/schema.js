@@ -9,6 +9,7 @@ import {
 } from "graphql";
 import Project from "../models/Projects.js";
 import Client from "../models/Client.js";
+import { type } from "os";
 
 // Client Type
 const ClientType = new GraphQLObjectType({
@@ -118,7 +119,6 @@ const mutation = new GraphQLObjectType({
               completed: { value: "Completed" },
             },
           }),
-          defaultValue: "Not Started",
         },
       },
       resolve(parent, args) {

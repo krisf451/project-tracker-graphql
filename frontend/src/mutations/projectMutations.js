@@ -27,24 +27,37 @@ export const ADD_PROJECT = gql`
   }
 `;
 
-// export const DELETE_PROJECT = gql`
-//   mutation deleteProject($id: ID!) {
-//     deleteClient(id: $id) {
-//       id
-//       name
-//       email
-//       phone
-//     }
-//   }
-// `;
+export const DELETE_PROJECT = gql`
+  mutation deleteProject($id: ID!) {
+    deleteProject(id: $id) {
+      name
+    }
+  }
+`;
 
-// export const EDIT_PROJECT = gql`
-//   mutation updateProject($name: String!, $email: String!, $phone: String!) {
-//     addClient(name: $name, email: $email, phone: $phone) {
-//       id
-//       name
-//       email
-//       phone
-//     }
-//   }
-// `;
+export const UPDATE_PROJECT = gql`
+  mutation updateProject(
+    $id: ID!
+    $name: String!
+    $description: String!
+    $status: ProjectStatusUpdate!
+  ) {
+    updateProject(
+      name: $name
+      description: $description
+      status: $status
+      id: $id
+    ) {
+      id
+      name
+      description
+      status
+      client {
+        id
+        name
+        email
+        phone
+      }
+    }
+  }
+`;
